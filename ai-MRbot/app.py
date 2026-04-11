@@ -66,13 +66,14 @@ def handle_message(event):
             alt_text="小如如的電子名片",
             contents=FlexContainer.from_dict(flex_json)
         )
-    # 之後新增其他人只要加 elif，例如：
-    # elif user_msg == "MR":
-    #     flex_json = load_flex("card_mr.json")
-    #     reply_msg = FlexMessage(
-    #         alt_text="MR的電子名片",
-    #         contents=FlexContainer.from_dict(flex_json)
-    #     )
+
+    elif user_msg == "鍾師富":
+    flex_json = load_flex("card_chung.json")
+    reply_msg = FlexMessage(
+        alt_text="鍾師富的電子名片",
+        contents=FlexContainer.from_dict(flex_json)
+    )
+    
     else:
         reply_msg = TextMessage(text="小如如")
 
