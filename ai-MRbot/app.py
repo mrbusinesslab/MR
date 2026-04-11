@@ -24,8 +24,8 @@ from linebot.v3.webhooks import (
 
 app = Flask(__name__)
 
-configuration = Configuration(access_token='6joVDQPXzLNGA27OIZSSd1rNt1dueoj7uxv2JgqyWt0SNy19uPx+jfUH0VcyaWvj3n6B6q8cJb9pZzIZOfwcKR3ID9ReBNA4tMX4/dkxVRDTxu0lghDZIFFiy6DiQzMRQOax0s3uONU8Rtp0w2yriwdB04t89/1O/w1cDnyilFU=')  # ← 換成你的Token
-handler = WebhookHandler('a260f8b189e5eeae791e5984e17a2031')  # ← 換成你的Channel Secret
+configuration = Configuration(access_token=os.environ.get('LINE_CHANNEL_ACCESS_TOKEN'))
+handler = WebhookHandler(os.environ.get('LINE_CHANNEL_SECRET'))
 
 
 def load_flex(filename):
