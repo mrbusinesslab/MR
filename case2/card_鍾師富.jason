@@ -38,12 +38,7 @@
                         "text": "來電諮詢",
                         "color": "#ffffff",
                         "flex": 0,
-                        "offsetTop": "-2px",
-                        "action": {
-                          "type": "uri",
-                          "label": "電話",
-                          "uri": "tel:0905523191"
-                        }
+                        "offsetTop": "-2px"
                       },
                       {
                         "type": "filler"
@@ -64,8 +59,8 @@
                 "backgroundColor": "#5c8bc3",
                 "action": {
                   "type": "uri",
-                  "label": "action",
-                  "uri": "https://www.instagram.com/0421_luru/"
+                  "label": "電話",
+                  "uri": "tel:0905523191"
                 }
               },
               {
@@ -87,12 +82,7 @@
                         "text": "預約抓漏",
                         "color": "#ffffff",
                         "flex": 0,
-                        "offsetTop": "-2px",
-                        "action": {
-                          "type": "uri",
-                          "label": "action",
-                          "uri": "https://liff.line.me/2009755863-0TrE8IbD"
-                        }
+                        "offsetTop": "-2px"
                       },
                       {
                         "type": "filler"
@@ -188,8 +178,8 @@
                 "backgroundColor": "#5c8bc3",
                 "action": {
                   "type": "uri",
-                  "label": "line",
-                  "uri": "https://liff.line.me/2009755863-mNfBQrRM"
+                  "label": "分享",
+                  "uri": "https://liff.line.me/2009755863-0TrE8IbD"
                 }
               },
               {
