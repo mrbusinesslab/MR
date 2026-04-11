@@ -43,7 +43,7 @@ def load_flex(filepath):
 
 # --- 路由設定 ---
 
-@app.route("/callback", method=["POST"])
+@app.route("/callback", methods=["POST"])
 def callback():
     signature = request.headers.get('X-Line-Signature')
     body = request.get_data(as_text=True)
