@@ -60,7 +60,7 @@ def handle_message(event):
             contents=FlexContainer.from_dict(flex_json)
         )
     elif user_msg == "鍾師富":
-        flex_json = load_flex("case2/card_鍾師富.json")
+        flex_json = load_flex("case2/card_chung.json")
         reply_msg = FlexMessage(
             alt_text="鍾師富的電子名片",
             contents=FlexContainer.from_dict(flex_json)
