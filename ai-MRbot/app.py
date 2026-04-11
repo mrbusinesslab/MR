@@ -29,8 +29,11 @@ configuration = Configuration(access_token=os.getenv('LINE_CHANNEL_ACCESS_TOKEN'
 handler = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 
 
-def load_flex(filename):
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+elif user_msg == "小如如":
+    flex_json = load_flex("case1/card_luru.json")
+
+elif user_msg == "鍾師富":
+    flex_json = load_flex("case2/card_chung.json")
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -48,9 +51,10 @@ def callback():
     return 'OK'
 
 
-@app.route("/liff/<name>")
-def liff_page(name):
+@app.route("/liff/<folder>/<name>")
+def liff_page(folder, name):
     filename = f"liff_{name}.html"
+    filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), folder, filename)
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), filename), "r", encoding="utf-8") as f:
         content = f.read()
     return content, 200, {"Content-Type": "text/html; charset=utf-8"}
