@@ -50,7 +50,9 @@ def callback():
 
 @app.route("/liff")
 def liff():
-    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), "liff.html")
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "liff.html"), "r", encoding="utf-8") as f:
+        content = f.read()
+    return content, 200, {"Content-Type": "text/html; charset=utf-8"}
 
 
 @handler.add(MessageEvent, message=TextMessageContent)
