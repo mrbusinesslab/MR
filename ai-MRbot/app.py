@@ -1,0 +1,86 @@
+from flask import Flask, request, abort, send_from_directory
+import json
+import os
+
+from linebot.v3 import (
+    WebhookHandler
+)
+from linebot.v3.exceptions import (
+    InvalidSignatureError
+)
+from linebot.v3.messaging import (
+    Configuration,
+    ApiClient,
+    MessagingApi,
+    ReplyMessageRequest,
+    TextMessage,
+    FlexMessage,
+    FlexContainer
+)
+from linebot.v3.webhooks import (
+    MessageEvent,
+    TextMessageContent
+)
+
+app = Flask(__name__)
+
+configuration = Configuration(access_token='6joVDQPXzLNGA27OIZSSd1rNt1dueoj7uxv2JgqyWt0SNy19uPx+jfUH0VcyaWvj3n6B6q8cJb9pZzIZOfwcKR3ID9ReBNA4tMX4/dkxVRDTxu0lghDZIFFiy6DiQzMRQOax0s3uONU8Rtp0w2yriwdB04t89/1O/w1cDnyilFU=')  # ← 換成你的Token
+handler = WebhookHandler('a260f8b189e5eeae791e5984e17a2031')  # ← 換成你的Channel Secret
+
+
+def load_flex(filename):
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+@app.route("/callback", methods=['POST'])
+def callback():
+    signature = request.headers['X-Line-Signature']
+    body = request.get_data(as_text=True)
+    app.logger.info("Request body: " + body)
+    try:
+        handler.handle(body, signature)
+    except InvalidSignatureError:
+        app.logger.info("Invalid signature. Please check your channel access token/channel secret.")
+        abort(400)
+    return 'OK'
+
+
+@app.route("/liff")
+def liff():
+    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), "liff.html")
+
+
+@handler.add(MessageEvent, message=TextMessageContent)
+def handle_message(event):
+    user_msg = event.message.text.strip()
+
+    if user_msg == "小如如":
+        flex_json = load_flex("card_luru.json")
+        reply_msg = FlexMessage(
+            alt_text="小如如的電子名片",
+            contents=FlexContainer.from_dict(flex_json)
+        )
+    # 之後新增其他人只要加 elif，例如：
+    # elif user_msg == "MR":
+    #     flex_json = load_flex("card_mr.json")
+    #     reply_msg = FlexMessage(
+    #         alt_text="MR的電子名片",
+    #         contents=FlexContainer.from_dict(flex_json)
+    #     )
+    else:
+        reply_msg = TextMessage(text="小如如")
+
+    with ApiClient(configuration) as api_client:
+        line_bot_api = MessagingApi(api_client)
+        line_bot_api.reply_message_with_http_info(
+            ReplyMessageRequest(
+                reply_token=event.reply_token,
+                messages=[reply_msg]
+            )
+        )
+
+
+if __name__ == "__main__":
+    app.run()
