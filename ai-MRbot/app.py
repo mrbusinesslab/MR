@@ -21,11 +21,12 @@ from linebot.v3.webhooks import (
     MessageEvent,
     TextMessageContent
 )
+import os
 
 app = Flask(__name__)
 
-configuration = Configuration(access_token=os.environ.get('LINE_CHANNEL_ACCESS_TOKEN'))
-handler = WebhookHandler(os.environ.get('LINE_CHANNEL_SECRET'))
+configuration = Configuration(access_token=os.getenv('LINE_CHANNEL_ACCESS_TOKEN'))
+line_handler = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 
 
 def load_flex(filename):
