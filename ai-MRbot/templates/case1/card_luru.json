@@ -9,7 +9,7 @@
         "contents": [
           {
             "type": "image",
-            "url": "https://raw.githubusercontent.com/mrbusinesslab/MR/refs/heads/main/case1/1.png",
+            "url": "https://github.com/mrbusinesslab/MR/blob/main/namecard/case1_luru/1.png?raw=true",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:3",
@@ -54,8 +54,8 @@
                 "cornerRadius": "4px",
                 "spacing": "sm",
                 "borderColor": "#e0be60",
-                "margin": "xxl",
-                "height": "40px",
+                "margin": "md",
+                "height": "50px",
                 "backgroundColor": "#e0be60",
                 "action": {
                   "type": "uri",
@@ -98,8 +98,8 @@
                 "cornerRadius": "4px",
                 "spacing": "sm",
                 "borderColor": "#473c38",
-                "margin": "xxl",
-                "height": "40px",
+                "margin": "md",
+                "height": "50px",
                 "backgroundColor": "#473c38",
                 "action": {
                   "type": "uri",
@@ -128,7 +128,7 @@
         "contents": [
           {
             "type": "image",
-            "url": "https://raw.githubusercontent.com/mrbusinesslab/MR/refs/heads/main/case1/2.png",
+            "url": "https://github.com/mrbusinesslab/MR/blob/main/namecard/case1_luru/2.png?raw=true",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:3",
@@ -138,6 +138,50 @@
             "type": "box",
             "layout": "vertical",
             "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "filler"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "contents": [
+                      {
+                        "type": "filler"
+                      },
+                      {
+                        "type": "text",
+                        "text": "預約顧問諮詢",
+                        "color": "#ffffff",
+                        "flex": 0,
+                        "offsetTop": "-2px"
+                      },
+                      {
+                        "type": "filler"
+                      }
+                    ],
+                    "spacing": "sm"
+                  },
+                  {
+                    "type": "filler"
+                  }
+                ],
+                "borderWidth": "1px",
+                "cornerRadius": "4px",
+                "spacing": "sm",
+                "borderColor": "#e0be60",
+                "margin": "md",
+                "height": "50px",
+                "backgroundColor": "#e0be60",
+                "action": {
+                  "type": "uri",
+                  "label": "line",
+                  "uri": "https://lin.ee/5SOTwm7"
+                }
+              },
               {
                 "type": "box",
                 "layout": "vertical",
@@ -172,53 +216,9 @@
                 "borderWidth": "1px",
                 "cornerRadius": "4px",
                 "spacing": "sm",
-                "borderColor": "#e0be60",
-                "margin": "xxl",
-                "height": "40px",
-                "backgroundColor": "#e0be60",
-                "action": {
-                  "type": "uri",
-                  "label": "line",
-                  "uri": "https://lin.ee/5SOTwm7"
-                }
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "filler"
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "contents": [
-                      {
-                        "type": "filler"
-                      },
-                      {
-                        "type": "text",
-                        "text": "30秒讓客戶買單！",
-                        "color": "#ffffff",
-                        "flex": 0,
-                        "offsetTop": "-2px"
-                      },
-                      {
-                        "type": "filler"
-                      }
-                    ],
-                    "spacing": "sm"
-                  },
-                  {
-                    "type": "filler"
-                  }
-                ],
-                "borderWidth": "1px",
-                "cornerRadius": "4px",
-                "spacing": "sm",
                 "borderColor": "#473c38",
-                "margin": "xxl",
-                "height": "40px",
+                "margin": "md",
+                "height": "50px",
                 "backgroundColor": "#473c38",
                 "action": {
                   "type": "uri",
@@ -247,7 +247,7 @@
         "contents": [
           {
             "type": "image",
-            "url": "https://raw.githubusercontent.com/mrbusinesslab/MR/refs/heads/main/case1/3.png",
+            "url": "https://github.com/mrbusinesslab/MR/blob/main/namecard/case1_luru/3.png?raw=true",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:3",
@@ -292,8 +292,8 @@
                 "cornerRadius": "4px",
                 "spacing": "sm",
                 "borderColor": "#e0be60",
-                "margin": "xxl",
-                "height": "40px",
+                "margin": "md",
+                "height": "50px",
                 "backgroundColor": "#e0be60",
                 "action": {
                   "type": "uri",
@@ -336,8 +336,8 @@
                 "cornerRadius": "4px",
                 "spacing": "sm",
                 "borderColor": "#473c38",
-                "margin": "xxl",
-                "height": "40px",
+                "margin": "md",
+                "height": "50px",
                 "backgroundColor": "#473c38",
                 "action": {
                   "type": "uri",
@@ -366,7 +366,7 @@
         "contents": [
           {
             "type": "image",
-            "url": "https://raw.githubusercontent.com/mrbusinesslab/MR/refs/heads/main/case1/4.png",
+            "url": "https://github.com/mrbusinesslab/MR/blob/main/namecard/case1_luru/4.png?raw=true",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:3",
@@ -392,7 +392,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "個人案例分享",
+                        "text": "商業合作洽談",
                         "color": "#ffffff",
                         "flex": 0,
                         "offsetTop": "-2px"
@@ -411,9 +411,14 @@
                 "cornerRadius": "4px",
                 "spacing": "sm",
                 "borderColor": "#e0be60",
-                "margin": "xxl",
-                "height": "40px",
-                "backgroundColor": "#e0be60"
+                "margin": "md",
+                "height": "50px",
+                "backgroundColor": "#e0be60",
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://line.me/ti/p/FGAd3F8Asx"
+                }
               },
               {
                 "type": "box",
@@ -431,7 +436,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "企業合作案例",
+                        "text": "預約美容．美體",
                         "color": "#ffffff",
                         "flex": 0,
                         "offsetTop": "-2px"
@@ -450,9 +455,14 @@
                 "cornerRadius": "4px",
                 "spacing": "sm",
                 "borderColor": "#473c38",
-                "margin": "xxl",
-                "height": "40px",
-                "backgroundColor": "#473c38"
+                "margin": "md",
+                "height": "50px",
+                "backgroundColor": "#473c38",
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "https://lin.ee/8NyVW9j"
+                }
               }
             ],
             "position": "relative",
@@ -475,7 +485,7 @@
         "contents": [
           {
             "type": "image",
-            "url": "https://raw.githubusercontent.com/mrbusinesslab/MR/refs/heads/main/case1/5.png",
+            "url": "https://github.com/mrbusinesslab/MR/blob/main/namecard/case1_luru/5.png?raw=true",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:3",
@@ -520,8 +530,8 @@
                 "cornerRadius": "4px",
                 "spacing": "sm",
                 "borderColor": "#e0be60",
-                "margin": "xxl",
-                "height": "40px",
+                "margin": "md",
+                "height": "50px",
                 "backgroundColor": "#e0be60",
                 "action": {
                   "type": "uri",
@@ -564,8 +574,8 @@
                 "cornerRadius": "4px",
                 "spacing": "sm",
                 "borderColor": "#473c38",
-                "margin": "xxl",
-                "height": "40px",
+                "margin": "md",
+                "height": "50px",
                 "backgroundColor": "#473c38",
                 "action": {
                   "type": "uri",
