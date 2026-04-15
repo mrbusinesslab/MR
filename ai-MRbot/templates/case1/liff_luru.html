@@ -2,19 +2,15 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>分享電子名片</title>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </head>
 
 <body>
 <script>
-  async function main() {
-    await liff.init({ liffId: "2009755863-mNfBQrRM" });
-
-    const flexContent = {
-      "type": "carousel",
-      "contents": [ 
-        {
+  const flexContent = {
+    {
   "type": "carousel",
   "contents": [
     {
@@ -614,24 +610,9 @@
     }
   ]
 }
-      ]
-    };
 
-    // ⭐ 分享功能（重點）
-    if (liff.isApiAvailable('shareTargetPicker')) {
-      await liff.shareTargetPicker([
-        {
-          "type": "flex",
-          "altText": "小如如電子名片",
-          "contents": flexContent
-        }
-      ]);
-    } else {
-      alert("此裝置不支援分享功能");
-    }
-  }
-
-  main();
+    ]
+  };
 </script>
 </body>
 </html>
