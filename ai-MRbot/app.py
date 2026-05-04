@@ -70,7 +70,7 @@ def liff_emma():
     return content, 200, {"Content-Type": "text/html; charset=utf-8"}
 
 
-@app.route("/liff/case4_jay/jay")
+@app.route("/liff/case4/jay")
 def liff_jay():
     content = load_liff("case4/liff_jay.html")
     return content, 200, {"Content-Type": "text/html; charset=utf-8"}
