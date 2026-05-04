@@ -72,7 +72,7 @@ def liff_emma():
 
 @app.route("/liff/case4_jay/jay")
 def liff_jay():
-    content = load_liff("case4_jay/liff_jay.html")
+    content = load_liff("case4/liff_jay.html")
     return content, 200, {"Content-Type": "text/html; charset=utf-8"}
 
 
@@ -114,7 +114,7 @@ def handle_message(event):
                 reply_msg = TextMessage(text="抱歉，名片檔案讀取失敗")
 
         elif "傑哥" in user_msg:
-            flex_data = load_flex("case4_jay/card_jay.json")
+            flex_data = load_flex("case4/card_jay.json")
             if flex_data:
                 reply_msg = FlexMessage(
                     alt_text="傑哥的電子名片",
