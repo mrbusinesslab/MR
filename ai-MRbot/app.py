@@ -1,6 +1,7 @@
 import os
 import json
 from flask import Flask, request, abort
+
 from linebot.v3 import WebhookHandler
 from linebot.v3.exceptions import InvalidSignatureError
 from linebot.v3.messaging import (
@@ -15,8 +16,10 @@ from linebot.v3.messaging import (
 from linebot.v3.webhooks import MessageEvent, TextMessageContent
 
 app = Flask(__name__)
+
 configuration = Configuration(access_token=os.getenv('LINE_CHANNEL_ACCESS_TOKEN'))
 handler = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
+
 
 def load_flex(filepath):
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -28,11 +31,13 @@ def load_flex(filepath):
     with open(full_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
+
 def load_liff(filepath):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     full_path = os.path.join(base_dir, "templates", filepath)
     with open(full_path, "r", encoding="utf-8") as f:
         return f.read()
+
 
 @app.route("/callback", methods=["POST"])
 def callback():
@@ -46,24 +51,35 @@ def callback():
         abort(400)
     return 'OK'
 
+
 @app.route("/liff/case1/luru")
 def liff_luru():
     content = load_liff("case1/liff_luru.html")
     return content, 200, {"Content-Type": "text/html; charset=utf-8"}
+
 
 @app.route("/liff/case2/chung")
 def liff_chung():
     content = load_liff("case2/liff_chung.html")
     return content, 200, {"Content-Type": "text/html; charset=utf-8"}
 
+
 @app.route("/liff/case3/emma")
 def liff_emma():
     content = load_liff("case3/liff_emma.html")
     return content, 200, {"Content-Type": "text/html; charset=utf-8"}
 
+
+@app.route("/liff/case4_jay/jay")
+def liff_jay():
+    content = load_liff("case4_jay/liff_jay.html")
+    return content, 200, {"Content-Type": "text/html; charset=utf-8"}
+
+
 @handler.add(MessageEvent, message=TextMessageContent)
 def handle_message(event):
     user_msg = event.message.text.strip()
+
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
 
@@ -97,8 +113,18 @@ def handle_message(event):
             else:
                 reply_msg = TextMessage(text="抱歉，名片檔案讀取失敗")
 
+        elif "傑哥" in user_msg:
+            flex_data = load_flex("case4_jay/card_jay.json")
+            if flex_data:
+                reply_msg = FlexMessage(
+                    alt_text="傑哥的電子名片",
+                    contents=FlexContainer.from_dict(flex_data)
+                )
+            else:
+                reply_msg = TextMessage(text="抱歉，名片檔案讀取失敗")
+
         else:
-            reply_msg = TextMessage(text="請輸入關鍵字：\n🔹 小如如\n🔹 鍾師富\n🔹 大象木地板")
+            reply_msg = TextMessage(text="請輸入關鍵字：\n🔹 小如如\n🔹 鍾師富\n🔹 大象木地板\n🔹 傑哥")
 
         line_bot_api.reply_message(
             ReplyMessageRequest(
@@ -106,6 +132,7 @@ def handle_message(event):
                 messages=[reply_msg]
             )
         )
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
