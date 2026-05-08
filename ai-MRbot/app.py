@@ -87,7 +87,7 @@ def handle_message(event):
             flex_data = load_flex("case1/card_luru.json")
             if flex_data:
                 reply_msg = FlexMessage(
-                    alt_text="小如如的電子名片",
+                    alt_text="MR.主理人",
                     contents=FlexContainer.from_dict(flex_data)
                 )
             else:
@@ -97,7 +97,7 @@ def handle_message(event):
             flex_data = load_flex("case2/card_chung.json")
             if flex_data:
                 reply_msg = FlexMessage(
-                    alt_text="鍾師富的電子名片",
+                    alt_text="詠順工程行老闆",
                     contents=FlexContainer.from_dict(flex_data)
                 )
             else:
@@ -107,7 +107,7 @@ def handle_message(event):
             flex_data = load_flex("case3/card_emma.json")
             if flex_data:
                 reply_msg = FlexMessage(
-                    alt_text="大象木地板的電子名片",
+                    alt_text="大象木地板闆娘",
                     contents=FlexContainer.from_dict(flex_data)
                 )
             else:
@@ -117,7 +117,7 @@ def handle_message(event):
             flex_data = load_flex("case4/card_jay.json")
             if flex_data:
                 reply_msg = FlexMessage(
-                    alt_text="傑哥的電子名片",
+                    alt_text="傑出油漆工程行創辦人",
                     contents=FlexContainer.from_dict(flex_data)
                 )
             else:
