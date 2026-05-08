@@ -104,7 +104,7 @@
                 "action": {
                   "type": "uri",
                   "label": "分享",
-                  "uri": "https://liff.line.me/2009755863-mKijAKRL"
+                  "uri": "https://liff.line.me/2009755863-CXbhqkVa"
                 }
               }
             ],
@@ -198,7 +198,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "預約諮詢",
+                        "text": "IG 追蹤",
                         "color": "#022855",
                         "flex": 0,
                         "offsetTop": "-2px"
@@ -317,7 +317,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "IG 追蹤",
+                        "text": "?",
                         "color": "#022855",
                         "flex": 0,
                         "offsetTop": "-2px"
@@ -338,12 +338,7 @@
                 "borderColor": "#022855",
                 "margin": "md",
                 "height": "50px",
-                "backgroundColor": "#ffffff",
-                "action": {
-                  "type": "uri",
-                  "label": "IG",
-                  "uri": "https://www.instagram.com/financial.arthurtic/"
-                }
+                "backgroundColor": "#ffffff"
               }
             ],
             "position": "relative",
